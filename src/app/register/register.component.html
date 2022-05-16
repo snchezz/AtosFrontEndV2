@@ -1,0 +1,238 @@
+<div class="row">
+    <div class="col s12 center">
+        <h1>Registro de nuevo Usuario</h1>
+    </div>
+</div>
+
+
+
+
+
+
+
+<form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+
+    <div class="row">
+        <div class="offset-l3 input-field col l2 s12">
+            <input type="text" class="validate" name="username" [(ngModel)]="form.username" required minlength="3"
+                maxlength="20" #username="ngModel" />
+            <div class="red" *ngIf="username.errors && f.submitted">
+                <div *ngIf="username.errors ['required']">El nombre de usuario es obligatorio</div>
+                <div *ngIf="username.errors ['minlength']">
+                    El nombre de usuario debe tener al menos 3 caracteres
+                </div>
+                <div *ngIf="username.errors ['maxlength']">
+                    El nombre de usuario no puede tener más de 20 caracteres
+                </div>
+            </div>
+            <label for="username">Nombre de Usuario</label>
+        </div>
+
+        <div class="input-field col l2 s12">
+            <input type="text" class="validate" name="email" [(ngModel)]="form.email" required email #email="ngModel" />
+            <div class="red" *ngIf="email.errors && f.submitted">
+                <div *ngIf="email.errors ['required']">Email es obligatorio</div>
+                <div *ngIf="email.errors ['email']">
+                    Email debe ser una dirección de email válida
+                </div>
+            </div>
+            <label for="email">Email</label>
+        </div>
+
+        <div class="input-field col l2 s12">
+            <input type="text" class="validate" name="Apellido" [(ngModel)]="form.apellidos" required minlength="3"
+                maxlength="20" #apellidos="ngModel" />
+            <div class="red" *ngIf="apellidos.errors && f.submitted">
+                <div *ngIf="apellidos.errors ['required']">Apellido es obligatorio</div>
+                <div *ngIf="apellidos.errors ['minlength']">
+                    Apellido debe tener al menos 3 caracteres
+                </div>
+                <div *ngIf="apellidos.errors ['maxlength']">
+                    Apellido no puede tener más de 20 caracteres
+                </div>
+            </div>
+            <label for="apellidos">Apellidos</label>
+        </div>
+
+        <div class="offset-l3 input-field col l2 s12">
+            <label for="location">Localización</label>
+            <input type="text" class="validate" name="Location" [(ngModel)]="form.location" required location
+                #location="ngModel" />
+            <!--Validacion-->
+        </div>
+
+        <div class="input-field col l2 s12">
+            <label for="teacher">Profesor</label>
+            <input type="text" class="validate" name="teacher" [(ngModel)]="form.teacher" required minlength="3"
+                maxlength="20" #teacher="ngModel" />
+            <!--Validacion-->
+        </div>
+
+        <div class="input-field col l2 s12">
+            <label for="nameGroupTeams">Nombre de grupo de Teams</label>
+            <input type="text" class="validate" name="nameGroupTeams" [(ngModel)]="form.nameGroupTeams" required
+                nameGroupTeams #nameGroupTeams="ngModel" />
+            <!--Validacion-->
+        </div>
+
+        <div class="offset-l3 input-field col l2 s12">
+            <label for="groupProyect">Grupo de Proyecto</label>
+            <input type="text" class="validate" name="groupProyect" [(ngModel)]="form.groupProyect" required
+                minlength="3" maxlength="20" #groupProyect="ngModel" />
+            <!--Validacion-->
+        </div>
+
+        <div class="input-field col l2 s12">
+            <label for="center">Centro</label>
+            <input type="text" class="validate" name="center" [(ngModel)]="form.center" required center
+                #center="ngModel" />
+            <!--Validacion-->
+        </div>
+
+        <div class="input-field col l2 s12">
+            <label for="dni">DNI</label>
+            <input type="text" class="validate" name="dni" [(ngModel)]="form.dni" required minlength="3" maxlength="20"
+                #dni="ngModel" />
+            <!--Validacion-->
+        </div>
+
+        <div class="offset-l3 input-field col l2 s12">
+            <label for="fechaNacimiento">Fecha de nacimiento</label>
+            <input type="text" class="datepicker" name="fechaNacimiento" [(ngModel)]="form.fechaNacimiento" required
+                fechaNacimiento #fechaNacimiento="ngModel">
+            <!--Validacion-->
+        </div>
+
+        <div class="input-field col l2 s12">
+            <label for="fechaFCT">Fecha comienzo de FCT</label>
+            <input type="text" class="datepicker" name="fechaFCT" [(ngModel)]="form.fechaFCT" required
+                #fechaFCT="ngModel">
+            <!--Validacion-->
+        </div>
+
+        <div class="input-field col l2 s12">
+            <label for="finFCT">Fecha final de FCT</label>
+            <input type="text" class="datepicker" name="email" [(ngModel)]="form.finFCT" required finFCT
+                #finFCT="ngModel">
+            <!--Validacion-->
+        </div>
+
+        <div class="offset-l3 input-field col l2 s12">
+            <label for="tipo">Tipo</label>
+            <input type="text" class="validate" name="tipo" [(ngModel)]="form.tipo" required minlength="3"
+                maxlength="20" #tipo="ngModel" />
+            <!--Validacion-->
+        </div>
+
+        <div class="input-field col l2 s12">
+            <label for="po">PO</label>
+            <input type="text" class="validate" name="po" [(ngModel)]="form.po" required po #po="ngModel" />
+            <!--Validacion-->
+        </div>
+
+        <div class="input-field col l2 s12">
+            <label for="ss">Numero de Seguridad Social</label>
+            <input type="text" class="validate" name="ss" [(ngModel)]="form.ss" required minlength="3" maxlength="20"
+                #ss="ngModel" />
+            <!--Validacion-->
+        </div>
+
+        <div class="offset-l3 input-field col l2 s12">
+            <label for="rr">RR</label>
+            <input type="text" class="validate" name="rr" [(ngModel)]="form.rr" required rr #rr="ngModel" />
+            <!--Validacion-->
+        </div>
+
+        <div class="input-field col l2 s12">
+            <label for="becas">Becas</label>
+            <input type="text" class="validate" name="becas" [(ngModel)]="form.becas" required minlength="3"
+                maxlength="20" #becas="ngModel" />
+            <!--Validacion-->
+        </div>
+
+        <div class="input-field col l2 s12">
+            <label for="ceco">Ceco</label>
+            <input type="text" class="validate" name="ceco" [(ngModel)]="form.ceco" minlength="3" required ceco
+                #ceco="ngModel" />
+            <!--Validacion-->
+        </div>
+
+        <div class="offset-l3 input-field col l2 s12">
+            <label for="orgUnit">Organizacion de Unit</label>
+            <input type="text" class="validate" name="orgUnit" [(ngModel)]="form.orgUnit" required minlength="3"
+                maxlength="20" #orgUnit="ngModel" />
+            <!--Validacion-->
+        </div>
+
+        <div class="input-field col l2 s12">
+            <label for="sociedad">Sociedad</label>
+            <input type="text" class="validate" name="sociedad" [(ngModel)]="form.sociedad" required sociedad
+                #sociedad="ngModel" />
+            <!--Validacion-->
+        </div>
+
+        <div class="input-field col l2 s12">
+            <label for="phone">Telefono</label>
+            <input type="text" class="validate" name="phone" [(ngModel)]="form.phone" required minlength="3"
+                maxlength="20" #phone="ngModel" />
+            <!--Validacion-->
+        </div>
+
+        <div class="offset-l3 input-field col l2 s12">
+            <label for="emailAtos">Email de ATOS</label>
+            <input type="text" class="validate" name="emailAtos" [(ngModel)]="form.emailAtos" required emailAtos
+                #emailAtos="ngModel" />
+            <!--Validacion-->
+        </div>
+
+        <div class="input-field col l2 s12">
+            <label for="das">DAS</label>
+            <input type="text" class="validate" name="das" [(ngModel)]="form.das" required minlength="3" maxlength="20"
+                #das="ngModel" />
+            <!--Validacion-->
+        </div>
+
+        <div class="input-field col l2 s12">
+            <label for="convenio">Convenio</label>
+            <input type="text" class="validate" name="convenio" [(ngModel)]="form.convenio" required convenio
+                #convenio="ngModel" />
+            <!--Validacion-->
+        </div>
+
+        <div class="offset-l3 input-field col l2 s12">
+            <label for="contacto">Contacto</label>
+            <input type="text" class="validate" name="contacto" [(ngModel)]="form.contacto" required minlength="3"
+                maxlength="20" #contacto="ngModel" />
+            <!--Validacion-->
+        </div>
+
+        <div class="input-field col l2 s12">
+            <label for="positionId">Posicion de ID</label>
+            <input type="text" class="validate" name="positionId" [(ngModel)]="form.positionId" minlength="3"
+                required positionId #positionId="ngModel" />
+            <!--Validacion-->
+        </div>
+
+        <div class="input-field col l2 s12">
+            <label for="password">Password</label>
+            <input type="password" class="validate" name="password" [(ngModel)]="form.password" required
+                minlength="6" #password="ngModel" />
+            <!--Validacion-->
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="offset-l2 input-field col l3 s12">
+        </div>
+
+        <div class="input-field col l2 s12">
+            <button class="btn btn-primary btn-block">Registrar Usuario</button>
+        </div>
+        <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+            Registro fallido<br />{{ errorMessage }}
+        </div>
+    </div>
+</form>
+<div class="alert alert-success" *ngIf="isSuccessful">
+    Se ha registrado correctamente!
+</div>
